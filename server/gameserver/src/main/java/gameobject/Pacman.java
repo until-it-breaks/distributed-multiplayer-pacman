@@ -19,14 +19,4 @@ public class Pacman extends GameObject {
         }
         setPosition(pos);
     }
-
-    public static Pacman createDefaultPacman(int x, int y) {
-        return new Pacman(
-            x * GameConstants.TILE_SIZE,
-            y * GameConstants.TILE_SIZE,
-            GameConstants.TILE_SIZE,
-            GameConstants.TILE_SIZE,
-            GameConstants.PACMAN_SPEED
-        );
-    }
 }
