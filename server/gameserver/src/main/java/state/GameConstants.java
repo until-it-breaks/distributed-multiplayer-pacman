@@ -1,4 +1,4 @@
-package gameobject;
+package state;
 
 public class GameConstants {
     private GameConstants() {}
@@ -9,5 +9,5 @@ public class GameConstants {
     public static final int NO_SPEED = 0;
     public static final int WORLD_WIDTH = 300;
     public static final int WORLD_HEIGHT = 300;
-    public static final int GAME_DEFAULT_TIME = 10000;
+    public static final int DEFAULT_GAME_TIME_IN_MILLISECONDS = 10000;
 }

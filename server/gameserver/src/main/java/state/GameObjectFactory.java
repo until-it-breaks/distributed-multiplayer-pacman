@@ -1,4 +1,9 @@
-package gameobject;
+package state;
+
+import entity.Food;
+import entity.Ghost;
+import entity.Pacman;
+import entity.Wall;
 
 public class GameObjectFactory {
     public static Food createFood(int x, int y) {

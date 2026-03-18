@@ -1,8 +1,13 @@
-package gameobject;
+package state;
+
+import entity.Food;
+import entity.Ghost;
+import entity.Pacman;
+import entity.Wall;
 
 import java.util.*;
 
-import static gameobject.GameConstants.GAME_DEFAULT_TIME;
+import static state.GameConstants.DEFAULT_GAME_TIME_IN_MILLISECONDS;
 
 public class GameState {
     private final List<Pacman> pacmen;
@@ -10,7 +15,7 @@ public class GameState {
     private final List<Wall> walls;
     private final List<Food> food;
 
-    private long remainingTimeInMilliseconds = GAME_DEFAULT_TIME;
+    private long remainingTimeInMilliseconds = DEFAULT_GAME_TIME_IN_MILLISECONDS;
 
     public GameState(List<Wall> walls, List<Food> food, List<Pacman> gameObjects, List<Ghost> ghosts) {
         this.walls = walls;
@@ -47,7 +52,7 @@ public class GameState {
         return remainingTimeInMilliseconds;
     }
 
-    public void decreaseTime(long delta) {
-        this.remainingTimeInMilliseconds -= delta;
+    public void decreaseTime(long deltaInMilliseconds) {
+        this.remainingTimeInMilliseconds -= deltaInMilliseconds;
     }
 }
