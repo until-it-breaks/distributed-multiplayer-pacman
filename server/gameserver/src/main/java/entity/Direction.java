@@ -1,4 +1,4 @@
-package gameobject;
+package entity;
 
 public enum Direction {
     UP(0,1),
@@ -10,9 +10,9 @@ public enum Direction {
     private final int x;
     private final int y;
 
-    Direction(int dx, int dy) {
-        this.x = dx;
-        this.y = dy;
+    Direction(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public int getX() {

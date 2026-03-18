@@ -1,4 +1,4 @@
-package gameobject;
+package entity;
 
 import java.util.Objects;
 import java.util.UUID;
@@ -45,11 +45,6 @@ public class GameObject {
 
     public void setDirection(Direction direction) {
         this.direction = direction.toVector2();
-    }
-
-    public void update() {
-        Vector2 velocity = this.direction.scale(this.speed);
-        this.position = this.position.add(velocity);
     }
 
     public int getHeight() {

@@ -1,4 +1,4 @@
-package gameobject;
+package entity;
 
 public class Ghost extends GameObject {
     public Ghost(int x, int y, int height, int width, int speed) {

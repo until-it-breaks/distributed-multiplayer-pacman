@@ -2,11 +2,15 @@ package gameobject;
 
 import java.util.*;
 
+import static gameobject.GameConstants.GAME_DEFAULT_TIME;
+
 public class GameState {
     private final List<Pacman> pacmen;
     private final List<Ghost> ghosts;
     private final List<Wall> walls;
     private final List<Food> food;
+
+    private long remainingTimeInMilliseconds = GAME_DEFAULT_TIME;
 
     public GameState(List<Wall> walls, List<Food> food, List<Pacman> gameObjects, List<Ghost> ghosts) {
         this.walls = walls;
@@ -23,6 +27,14 @@ public class GameState {
         return Collections.unmodifiableList(ghosts);
     }
 
+    public List<Wall> getWalls() {
+        return Collections.unmodifiableList(walls);
+    }
+
+    public List<Food> getFood() {
+        return Collections.unmodifiableList(food);
+    }
+
     public void removePacman(Pacman pacman) {
         this.pacmen.remove(pacman);
     }
@@ -31,11 +43,11 @@ public class GameState {
         this.food.remove(food);
     }
 
-    public List<Wall> getWalls() {
-        return walls;
+    public long getRemainingTimeInMilliseconds() {
+        return remainingTimeInMilliseconds;
     }
 
-    public List<Food> getFood() {
-        return food;
+    public void decreaseTime(long delta) {
+        this.remainingTimeInMilliseconds -= delta;
     }
 }
